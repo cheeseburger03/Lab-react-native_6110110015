@@ -25,8 +25,6 @@ export default function Weather(props){
         });
     }
 }, [props.zipCode])
-       
-    
     return(
         <ImageBackground source={require('../sky.jpg')} style={styles.backdrop}>
             <View style = {text.backdrop}>
