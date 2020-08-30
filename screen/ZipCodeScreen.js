@@ -79,20 +79,23 @@ const block = StyleSheet.create({
 
 const text = StyleSheet.create({
     letter : {
-            color : '#fff',
+            color : 'white',
             fontSize : 25 ,
             textAlign : 'center',
+            fontWeight : '500'
             
     }
 });
 
 const box = StyleSheet.create({
     pad : {
-        borderWidth : 1.6,
-        borderColor : 'black',
+        flexDirection: 'column',
+        justifyContent : 'center',
+        borderWidth : 1.8,
+        borderColor : 'white',
         height : '100%',
-        width : ' 100%',
-        
+        width : '100%'
+    
         
     }
 });
