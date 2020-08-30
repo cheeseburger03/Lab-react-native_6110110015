@@ -16,11 +16,13 @@ const ZipItem = ({place, code, navigation}) => (
     <TouchableHighlight onPress={() => {
         navigation.navigate('Weather',{zipCode: code})
     }}>
-        
+        <ImageBackground style = {log.backdrop}>
             <View style = {styles.zipItem}>
             <Text> {place}</Text>
             <Text> {code} </Text>
         </View>
+        </ImageBackground>
+            
         
     </TouchableHighlight>
 
@@ -62,6 +64,15 @@ const bg3 = StyleSheet.create ({
         width : '100%'
     }
 });
+
+const log = StyleSheet.create({
+    backdrop : {
+            flexDirection : 'column' ,
+            justifyContent : 'center',
+            alignItems : 'center',
+            height : '100%'
+        }
+})
 
 
 
