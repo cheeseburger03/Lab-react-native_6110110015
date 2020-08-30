@@ -12,7 +12,7 @@ export default function Weather(props){
     useEffect(() => {
         console.log(`fetching data with zipCode = ${props.zipCode}`)
         if (props.zipCode) {
-            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${props.zipCode},th&units=metric&APPID=23310f2894e3255687adace8ca2e16d5 `)
+            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${props.zipCode},th&units=metric&APPID=23310f2894e3255687adace8ca2e16d5`)
                 .then((response) => response.json())
                 .then((json) => {
                     setForecastInfo({
@@ -20,15 +20,17 @@ export default function Weather(props){
                         description: json.weather[0].description,
                         temp: json.main.temp });
             })
-        .catch((error) => {
-                console.warn(error);
-        });
+                .catch((error) => {
+                    console.warn(error);
+            });
     }
 }, [props.zipCode])
     return(
         <ImageBackground source={require('../sky.jpg')} style={styles.backdrop}>
             <View style = {text.backdrop}>
-                <Text style = {font.zipFont}>Zip Code is {props.zipCode} </Text>
+                <Text style = {font.zipFont}>Zip Code : {props.zipCode} </Text>
+                <Text></Text>
+                <Text></Text>
                 <Forecast {...forecastInfo}/>
             </View>
             
@@ -60,6 +62,6 @@ const font = StyleSheet.create({
     zipFont : {
         textAlign: 'center',
         color : '#fff',
-        fontSize : 30 
+        fontSize : 30
     }
 })

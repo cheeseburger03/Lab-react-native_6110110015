@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatList, View ,Text , StyleSheet} from 'react-native'
+import { FlatList, View ,Text , StyleSheet, ImageBackground} from 'react-native'
 import { TouchableHighlight } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
 
@@ -16,28 +16,34 @@ const ZipItem = ({place, code, navigation}) => (
     <TouchableHighlight onPress={() => {
         navigation.navigate('Weather',{zipCode: code})
     }}>
-        <View style = {styles.zipItem}>
+        
+            <View style = {styles.zipItem}>
             <Text> {place}</Text>
             <Text> {code} </Text>
         </View>
+        
     </TouchableHighlight>
 
 )
 export default function ZipCodeScreen(){
     const navigation = useNavigation()
     return(
-        <FlatList
+        <ImageBackground source={require('../bg3.jpg')} style = {bg3.backp}>
+            <FlatList
             data = {availableZipItems}
             keyExtractor = {item => item.code}
             renderItem = {({item}) => <ZipItem {...item} navigation={navigation} /> }
         />
+        </ImageBackground>
+        
     )
 }
 const styles = StyleSheet.create({
         zipItem: {
             flex: 1 ,
             flexDirection: 'row',
-            justifyContent : 'space-evenly'
+            justifyContent : 'space-evenly',
+            alignItems : 'center'
         },
         zipPlace : {
             flex : 1 ,
@@ -45,5 +51,17 @@ const styles = StyleSheet.create({
         },
         zipCode: {
             flex : 1 ,
-        }
-})
+        },
+
+       
+});
+
+const bg3 = StyleSheet.create ({
+    backp : {
+        height : '100%' ,
+        width : '100%'
+    }
+});
+
+
+
