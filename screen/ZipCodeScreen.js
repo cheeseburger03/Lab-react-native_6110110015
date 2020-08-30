@@ -13,13 +13,13 @@ const availableZipItems = [
    
 
 const ZipItem = ({place, code, navigation}) => (
-    <TouchableHighlight onPress={() => {
+    <TouchableHighlight style = {box.pad} onPress={() => {
         navigation.navigate('Weather',{zipCode: code})
     }}>
-        <ImageBackground style = {log.backdrop}>
+        <ImageBackground style = {block.backdrop}>
             <View style = {styles.zipItem}>
-            <Text> {place}</Text>
-            <Text> {code} </Text>
+            <Text style = {text.letter}>  {place}</Text>
+            <Text style = {text.letter}>  {code} </Text>
         </View>
         </ImageBackground>
             
@@ -45,7 +45,8 @@ const styles = StyleSheet.create({
             flex: 1 ,
             flexDirection: 'row',
             justifyContent : 'space-evenly',
-            alignItems : 'center'
+            alignItems : 'center',
+        
         },
         zipPlace : {
             flex : 1 ,
@@ -65,14 +66,36 @@ const bg3 = StyleSheet.create ({
     }
 });
 
-const log = StyleSheet.create({
+const block = StyleSheet.create({
     backdrop : {
             flexDirection : 'column' ,
             justifyContent : 'center',
             alignItems : 'center',
-            height : '100%'
+            height : '99%',
+            
+            
         }
-})
+});
+
+const text = StyleSheet.create({
+    letter : {
+            color : '#fff',
+            fontSize : 25 ,
+            textAlign : 'center',
+            
+    }
+});
+
+const box = StyleSheet.create({
+    pad : {
+        borderWidth : 1.6,
+        borderColor : 'black',
+        height : '100%',
+        width : ' 100%',
+        
+        
+    }
+});
 
 
 
