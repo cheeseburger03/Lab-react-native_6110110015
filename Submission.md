@@ -12,7 +12,8 @@
   
 ## ตัวอย่างของหน้า Home
   
-  https://github.com/cheeseburger03/Lab-react-native_6110110015/blob/master/home.jpg
+  ![home](https://user-images.githubusercontent.com/60773307/91658626-04b34a00-eaf4-11ea-9049-8e807fbafe22.jpg)
+jpg
   
   
   
